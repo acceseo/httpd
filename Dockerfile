@@ -3,6 +3,7 @@ FROM httpd:2.4
 ENV HTTPD_SERVERNAME localhost
 ENV HTTPD_APP_DIRECTORY /app
 ENV HTTPD_FPM_HANDLER php.local:9000
+ENV TZ=Europe/Madrid
 
 RUN mkdir -p ${HTTPD_APP_DIRECTORY}
 
