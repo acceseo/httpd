@@ -3,6 +3,7 @@ FROM httpd:2.4
 ENV HTTPD_SERVERNAME localhost
 ENV HTTPD_APP_DIRECTORY /app
 ENV HTTPD_FPM_HANDLER php.local:9000
+ENV HTTPD_TIMEOUT 60
 ENV TZ=Europe/Madrid
 
 RUN mkdir -p ${HTTPD_APP_DIRECTORY}
@@ -47,3 +48,5 @@ RUN echo "Include conf/extra/httpd-fpm.conf" >> /usr/local/apache2/conf/httpd.co
 
 COPY httpd-directory.conf /usr/local/apache2/conf/extra/httpd-directory.conf
 RUN echo "Include conf/extra/httpd-directory.conf" >> /usr/local/apache2/conf/httpd.conf
+
+RUN echo 'TimeOut ${HTTPD_TIMEOUT}' >> conf/httpd.conf
