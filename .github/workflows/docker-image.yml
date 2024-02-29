@@ -26,6 +26,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/httpd:latest
           platforms: 'amd64,arm64'
