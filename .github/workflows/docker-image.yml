@@ -29,3 +29,10 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/httpd:latest
           platforms: 'amd64,arm64'
+      - if: ${{ github.ref == 'refs/heads/main' }}
+        name: Notify container release
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: '${{ secrets.ZAPIER_WEBHOOK }}'
+          method: 'POST'
+          data: '{"message": "🐳📦🪶 Imagen ${{ secrets.DOCKERHUB_USERNAME }}/httpd disponible en Docker Hub."}'
