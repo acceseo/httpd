@@ -46,7 +46,7 @@ docker run --rm -v $(pwd):/app -e HTTPD_APP_DIRECTORY=/app/public -p 443:443 acc
 *Vinculamos el puerto 443 del host con el 443 del contenedor a través del flag -p.*
 
 ## 🕹️ Ejemplo de uso (archivo de configuración docker-compose.yml)
-```
+```yaml
   version: '3'
   services:
     httpd.local:
