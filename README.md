@@ -2,7 +2,7 @@
     <a href="https://www.acceseo.com">
         <img
             alt="acceseo logo"
-            src="https://www.acceseo.com/wp-content/uploads/2019/09/logoAcceseo-2.svg"
+            src="logo-acceseo.svg"
             width="150">
     </a>
 </div>
