@@ -1,4 +1,4 @@
-FROM httpd:2.4.62
+FROM httpd:2.4.63
 
 ENV HTTPD_SERVERNAME localhost
 ENV HTTPD_APP_DIRECTORY /app
