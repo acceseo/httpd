@@ -31,8 +31,9 @@ jobs:
           platforms: 'amd64,arm64'
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Notify container release
-        uses: fjogeleit/http-request-action@v1
+        uses: SimonScholz/google-chat-action@main
         with:
-          url: '${{ secrets.ZAPIER_WEBHOOK }}'
-          method: 'POST'
-          data: '{"message": "🐳📦🪶 Imagen ${{ secrets.DOCKERHUB_USERNAME }}/httpd disponible en Docker Hub."}'
+            webhookUrl: '${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}'
+            title: "🐳📦🪶 ${{ secrets.DOCKERHUB_USERNAME }}/httpd"
+            subtitle: "Nueva imagen disponible en Docker Hub."
+            createDefaultSection: false
