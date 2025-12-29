@@ -1,5 +1,11 @@
 FROM httpd:2.4.66
 
+LABEL org.opencontainers.image.title="httpd"
+LABEL org.opencontainers.image.description="Opinionated httpd 2.4 container for development including SSL and PHP-FPM support"
+LABEL org.opencontainers.image.authors="acceseo Projects S.L."
+LABEL org.opencontainers.image.url="https://github.com/acceseo/httpd"
+LABEL org.opencontainers.image.licenses="MIT"
+
 ENV HTTPD_SERVERNAME localhost
 ENV HTTPD_APP_DIRECTORY /app
 ENV HTTPD_FPM_HANDLER php.local:9000
