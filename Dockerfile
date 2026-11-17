@@ -1,4 +1,4 @@
-FROM httpd:2.4.70
+FROM httpd:2.4.71
 
 LABEL org.opencontainers.image.title="httpd"
 LABEL org.opencontainers.image.description="Opinionated httpd 2.4 container for development including SSL and PHP-FPM support"
